@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $http, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,23 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+/*
+  $http.get("http://nsportal.freevar.com/APIs/orangeApi.php?request=articles")
+      .then(function(response){
+          i=-1;
+        while(i<response.data.length-1){
+          
+          i=i+1;
+          console.log('article while loop working...')
+          
+        $scope.BuckFizzNumbers = [response.data];
+        }
+        console.log('articles responding...');
+      });
+*/
+
+$scope.response = "responsed...";
 
   // Form data for the login modal
   $scope.loginData = {};
