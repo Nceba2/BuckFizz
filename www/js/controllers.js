@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $http, $ionicModal, $timeout) {
 
+  console.log("app controller is working...");
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -9,22 +10,9 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-/*
-  $http.get("http://nsportal.freevar.com/APIs/orangeApi.php?request=articles")
-      .then(function(response){
-          i=-1;
-        while(i<response.data.length-1){
-          
-          i=i+1;
-          console.log('article while loop working...')
-          
-        $scope.BuckFizzNumbers = [response.data];
-        }
-        console.log('articles responding...');
-      });
-*/
 
-$scope.response = "responsed...";
+sendHttpPost("http://localhost:8012/API/buckfizzAPI.php");
+$scope.buckfizzNumbers = results;
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -49,6 +37,9 @@ $scope.response = "responsed...";
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
+
+
+
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
