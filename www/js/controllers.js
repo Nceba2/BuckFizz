@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   //});
 
 
-sendHttpPost("http://localhost:8012/API/buckfizzAPI.php");
+sendHttpPost("http://nsportal.freevar.com/APIs/buckfizzAPI.php");
 $scope.buckfizzNumbers = results;
 
   // Form data for the login modal
